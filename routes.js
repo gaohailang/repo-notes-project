@@ -4,6 +4,7 @@ var router = express.Router();
 var fs = require('fs');
 
 var github = require('./github');
+var kickkass = require('./kickass');
 
 router.get('/', function(req, res) {
     /*res.render('index', {
@@ -19,13 +20,17 @@ router.get('/repo/:author/:repo', function(req, res) {
 });
 
 
+router.get('/kickass/:query', function(req, res) {
+    kickkass.search(req.params.query, defaultJSONResponser(res));
+});
+
 function defaultJSONResponser(res) {
-    return function(repo) {
+    return function(data) {
         res.json({
             meta: {
                 client: 'blah'
             },
-            data: repo
+            data: data
         });
     };
 }
