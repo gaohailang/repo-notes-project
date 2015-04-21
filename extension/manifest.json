@@ -1,0 +1,20 @@
+{
+    "name": "Repo-Notier",
+    "version": "0.0.1",
+    "manifest_version": 2,
+    "author": "Sivagao",
+    "description": "Take notes when you browse github",
+    "homepage_url": "https://github.com/gaohailang/repo-notes-project",
+    "permissions": [
+        "https://github.com/*",
+        "http://www.javlibrary.com/*",
+        "storage"
+    ],
+    "optional_permissions": [
+        "<all_urls>"
+    ],
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    }
+}
